@@ -1,18 +1,18 @@
 from datetime import datetime, timedelta
 import csv
 
-time_str = "06:57" # Example time string without AM/PM
-first_row = f"El-Goli, {time_str}"
+time_str = "11:53" # Example time string without AM/PM
+first_row = f"Meydan Kohan, {time_str}"
 first_row_list = first_row.split(",")
 
 print(first_row) # Print the first base time
 time_format = "%H:%M" # Example time format with 24-hour notation
-max_iterations = 52 # Example maximum number of iterations
+max_iterations = 11 # Example maximum number of iterations
 
 # Parse the time string and convert it to datetime object
 time_obj = datetime.strptime(time_str, time_format)
 
-with open('El-Goli.csv', mode='a', newline='') as file:
+with open('MeydanKohanFriday.csv', mode='a', newline='') as file:
 
     writer = csv.writer(file)
     writer.writerow(first_row_list)
@@ -24,7 +24,7 @@ with open('El-Goli.csv', mode='a', newline='') as file:
         # Convert the datetime object back to string
         new_time_str = time_obj.strftime(time_format)
 
-        row = f"El-Goli, {new_time_str}"
+        row = f"Meydan Kohan, {new_time_str}"
         row_list = row.split(",")
         writer.writerow(row_list)
 
