@@ -1,0 +1,251 @@
+{
+    "destinations": [{
+            "destination": "Meydan Kohan",
+            "stations": [{
+                    "id": 1,
+                    "name": "El-Goli",
+                    "weekday": {
+                        "times": ["07:41 AM", "08:16 AM", "08:51 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:36 AM", "09:11 AM", "09:46 AM"]
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "Sahand",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "Imam Reza",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 4,
+                    "name": "Khayyam",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 5,
+                    "name": "29 Bahman",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 6,
+                    "name": "Ostad Shahriyar",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 7,
+                    "name": "Daneshgah",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 8,
+                    "name": "Abresan",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 9,
+                    "name": "Gotb",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 10,
+                    "name": "Shahid Beheshti",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 11,
+                    "name": "Meydan Saat",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 12,
+                    "name": "Meydan Kohan",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                }
+            ]
+        },
+        {
+            "destination": "El-Goli",
+            "stations": [{
+                    "id": 1,
+                    "name": "Meydan Kohan",
+                    "weekday": {
+                        "times": ["07:41 AM", "08:16 AM", "08:51 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:36 AM", "09:11 AM", "09:46 AM"]
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "Meydan Saat",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "Shahid Beheshti",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 4,
+                    "name": "Gotb",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 5,
+                    "name": "Abresan",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 6,
+                    "name": "Daneshgah",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 7,
+                    "name": "Ostad Shahriyar",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 8,
+                    "name": "29 Bahman",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 9,
+                    "name": "Khayyam",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 10,
+                    "name": "Imam Reza",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 11,
+                    "name": "Sahand",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                },
+                {
+                    "id": 12,
+                    "name": "El-Goli",
+                    "weekday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    },
+                    "friday": {
+                        "times": ["08:18 AM", "08:53 AM", "09:28 AM"]
+                    }
+                }
+            ]
+        }
+    ]
+}
