@@ -1,3 +1,6 @@
+#this code just generates the timing that i needed no more
+
+
 from datetime import datetime, timedelta
 import csv
 
