@@ -1,23 +1,36 @@
-# import json
+import telebot
+import pytz
+from datetime import datetime
+from telebot import types
 
-# with open('timings.json', 'r') as file:
-#     data = json.load(file)
+# Create a new bot instance with your API token obtained from BotFather
+bot = telebot.TeleBot('YOUR_API_TOKEN')
 
-# for i in range(2):
+# Set the timezone to Iran timezone
+ir_tz = pytz.timezone('Asia/Tehran')
 
-#     #destination filter
-#     first_d = data["destinations"][i]
+# Handle the /start command
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    # Create a custom keyboard with an inline button
+    keyboard = types.InlineKeyboardMarkup()
+    callback_button = types.InlineKeyboardButton(text='Get Time', callback_data='get_time')
+    keyboard.add(callback_button)
 
-#     #station filter
-#     station =  first_d["stations"][0]
+    # Send the message with the custom keyboard
+    bot.reply_to(message, 'Hello! Press the button below to get the current time in Iran:', reply_markup=keyboard)
 
-#     #weekday filter
-#     station_weekday = station["weekday"]
+# Handle button presses
+@bot.callback_query_handler(func=lambda call: True)
+def handle_callback_query(call):
+    if call.data == 'get_time':
+        # Get the current time in Iran timezone
+        now = datetime.now(ir_tz)
+        time_str = now.strftime('%H:%M:%S')
+        weekday_str = now.strftime('%A')
 
-#     #timing filter
-#     station_weekday_times = station_weekday["times"]
-    
-# print(data["destinations"])
-# print(station)
-# print(station_weekday)
+        # Send the formatted time and weekday strings as a reply to the button press
+        bot.answer_callback_query(callback_query_id=call.id, text=f"The current time is {time_str} on a {weekday_str} in Iran.")
 
+# Start the bot and keep it running
+bot.polling()
