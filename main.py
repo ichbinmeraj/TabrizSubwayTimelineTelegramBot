@@ -28,18 +28,6 @@ def send_welcome(message):
   
   bot.reply_to(message, 'مسیر مترو خود را انتخاب کنید.', reply_markup=keyboard)
    
-  uid = str(message.from_user.id)
-  with open('user_id_name.json', 'r+' ) as f:
-    users = json.load(f)
-    if uid in users:
-      pass
-    else:  
-      firstname = message.from_user.first_name
-      username = message.from_user.username
-      users.update({f"{uid}": f"{firstname}-{username}"})
-      f.seek(0)
-      json.dump(users, f, indent = 2)
-    
 
 # Handle button presses
 @bot.callback_query_handler(func=lambda call: call.data.startswith('d_'))
@@ -64,7 +52,7 @@ def handle_d_callback_query(call):
   s1 = types.InlineKeyboardButton(text='ائل‌گولی', callback_data=c1)
   s2 = types.InlineKeyboardButton(text='سهند', callback_data=c2)
   s3 = types.InlineKeyboardButton(text='امام رضا', callback_data=c3)
-  s4 = types.InlineKeyboardButton(text='خیلم', callback_data=c4)
+  s4 = types.InlineKeyboardButton(text='خیام', callback_data=c4)
   s5 = types.InlineKeyboardButton(text='29 بهمن', callback_data=c5)
   s6 = types.InlineKeyboardButton(text='استاد شهریار', callback_data=c6)
   s7 = types.InlineKeyboardButton(text='دانشگاه', callback_data=c7)
@@ -93,11 +81,7 @@ def handle_s_callback_query(call):
  
   first_d = data["destinations"][d]
   station =  first_d["stations"][s]
-  user_id = call.from_user.id
-  user_name = call.from_user.first_name
-  username = call.from_user.username
-  bot.send_message(chat_id="-1001908601017", text=f"{user_id}-{user_name}/d:{d}-s:{s}-@{username}")
-
+  
   # Get the current time in Iran timezone
   now = datetime.now(ir_tz).time()
   time_str = now.strftime('%H:%M')
@@ -112,15 +96,37 @@ def handle_s_callback_query(call):
       if time(time_obj.hour, time_obj.minute) >= now and len(next_departures) < 3:
         next_departures.append(time_str)
 
+    if len(next_departures) > 2:
+      first_departure = next_departures[0]
+      secound_departure = next_departures[1]
+      third_departure = next_departures[2]
+      bot.reply_to(message, f''' 
+      نزدیک ترین تایمی که مترو در این ایستگاه خواهد بود : {first_departure}
+  تایم های متوالی بعدی : {secound_departure}, {third_departure}
+      ''')
+    elif len(next_departures) == 2:
+      first_departure = next_departures[0]
+      secound_departure = next_departures[1]
+      bot.reply_to(message, f''' 
+      نزدیک ترین تایمی که مترو در این ایستگاه خواهد بود : {first_departure}
+  آخرین مترو در این ایستگاه : {secound_departure}, {third_departure}
+      ''')
+    elif len(next_departures) == 1:
+      first_departure = next_departures[0]
+      bot.reply_to(message, f''' 
+      نزدیک ترین تایمی که مترو در این ایستگاه خواهد بود-این آخرین مترو می باشد : {first_departure}
+      ''')
+
+    elif len(next_departures) == 0:
+      bot.reply_to(message, f''' 
+      متاسفانه هم اکنون مترو تعطیل هست
+      
+          تایم کاری مترو تبریز:
+    روز های هفته - از 06:26 الی 20:30
+    روز های جمعه - از 11:30 الی 14:34
     
-    first_departure = next_departures[0]
-    secound_departure = next_departures[1]
-    third_departure = next_departures[2]
-    bot.reply_to(message, f''' 
-    نزدیک ترین تایمی که مترو در ایستگاه خواهد بود : {first_departure}
-تایم های متوالی بعدی : {secound_departure}, {third_departure}
-    ''')
-    
+      ''')
+      
   else :
     station_weekday = station["weekday"]["times"]
     next_departures = []
@@ -131,18 +137,55 @@ def handle_s_callback_query(call):
       if time(time_obj.hour, time_obj.minute) >= now and len(next_departures) < 3:
         next_departures.append(time_str)
         
-    first_departure = next_departures[0]
-    secound_departure = next_departures[1]
-    third_departure = next_departures[2]
-    bot.reply_to(message, f''' 
-    نزدیک ترین تایمی که مترو در ایستگاه خواهد بود : {first_departure}
-تایم های متوالی بعدی : {secound_departure}, {third_departure}
-    ''')
+    if len(next_departures) > 2:
+      first_departure = next_departures[0]
+      secound_departure = next_departures[1]
+      third_departure = next_departures[2]
+      bot.reply_to(message, f''' 
+      نزدیک ترین تایمی که مترو در ایستگاه خواهد بود : {first_departure}
+  تایم های متوالی بعدی : {secound_departure}, {third_departure}
+      ''')
+    elif len(next_departures) == 2:
+      first_departure = next_departures[0]
+      secound_departure = next_departures[1]
+      bot.reply_to(message, f''' 
+      نزدیک ترین تایمی که مترو در ایستگاه خواهد بود : {first_departure}
+  آخرین مترو در این ایستگاه : {secound_departure}
+      ''')
+    elif len(next_departures) == 1:
+      first_departure = next_departures[0]
+      bot.reply_to(message, f''' 
+      نزدیک ترین تایمی که مترو در ایستگاه خواهد بود(توجه کنید این آخرین مترو هست!) : {first_departure}
+      ''')
 
+    elif len(next_departures) == 0:
+      bot.reply_to(message, f''' 
+      متاسفانه هم اکنون مترو تعطیل می باشد
+
+            تایم کاری مترو تبریز:
+      روز های هفته - از 06:26 الی 20:30
+      روز های جمعه - از 11:30 الی 14:34
+      
+      ''')
+    
 
 @bot.message_handler(commands=['contact'])
 def send_admin_info(message):
-  bot.reply_to(message, f''' برای پیشنهادات و انتقادات : https://t.me/merajsafari
+  bot.reply_to(message, f''' برای پیشنهادات و انتقادات :
+  https://t.me/unknownMs_Bot?start=GfB-586430089-pwuWPJ
     ''')
+
+@bot.message_handler(commands=['about'])
+def send_admin_info(message):
+  bot.reply_to(message, f''' با استفاده از این ربات میتوانید بفهمید که نزدیک ترین مترو در چه ساعتی در ایستگاه مورد نظر خواهد بود و برنامه زمانی خود را با آن تایم هماهنگ کنید.
+
+تایم کاری مترو تبریز:
+روز های هفته - از 06:26 الی 20:30
+روز های جمعه - از 11:30 الی 14:34
+
+For she that not always(but sometimes) is late :)
+    ''')
+
+
 keep_alive()
 bot.polling()
