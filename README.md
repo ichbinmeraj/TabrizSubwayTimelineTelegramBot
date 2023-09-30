@@ -1,2 +1,2 @@
 # TabrizSubwayTimelineTelegramBot
-TelegramBot that hepls user with they timing
+TelegramBot that helps user with they timing
