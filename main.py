@@ -111,12 +111,7 @@ def handle_s_callback_query(call):
         station = first_d["stations"][m]
 
 
-    user_id = call.from_user.id
-    user_name = call.from_user.first_name
-    username = call.from_user.username
-    bot.send_message(
-        chat_id="-1001908601017", text=f"{user_id}-{user_name}/d:{d}-s:{s}-@{username}"
-    )
+   
 
     # Get the current time in Iran timezone
     now = datetime.now(ir_tz).time()
