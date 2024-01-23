@@ -11,10 +11,12 @@ Features:
 How to use:
 
 1 - Open Telegram and search for "Tabriz Subway Timeline Telegram Bot" or access by this [Link](https://t.me/tabriz_subway_timeline_bot).
-2 - Start a new chat with the bot
-3 - Select your destination and station 
 
-The bot will respond with the next metro arrival times
+2 - Start a new chat with the bot
+
+3 - Select your destination and station
+
+4- The bot will respond with the next metro arrival times
 
 ربات زمانبندی مترو تبریز
 
@@ -29,6 +31,9 @@ The bot will respond with the next metro arrival times
 نحوه استفاده:
 
 1 - تلگرام را باز کنید و "تایم لاین مترو تبریز" را جستجو کنید یا از این [لینک](https://t.me/tabriz_subway_timeline_bot) استفاده کنید
+
 2 - یک چت جدید با ربات شروع کنید
+
 3 - مسیر و ایستگاه خود را انتخاب کنید
+
 4 - ربات با زمان‌های رسیدن بعدی مترو پاسخ خواهد داد
