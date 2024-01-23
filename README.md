@@ -1,6 +1,4 @@
 # TabrizSubwayTimelineTelegramBot
-![photo_2024-01-23_20-46-40](https://github.com/ichbinmeraj/TabrizSubwayTimelineTelegramBot/assets/59417175/fac4d9e6-2160-4b35-98c1-525b29f09fe7)![photo_2024-01-23_20-46-37](https://github.com/ichbinmeraj/TabrizSubwayTimelineTelegramBot/assets/59417175/45a6e95a-f4d0-4734-838f-7cfafa2d9218)
-
 
 Stay on top of the Tabriz subway schedule with our Telegram bot, Tabriz Subway Timeline Telegram Bot! Simply enter your destination and station, and we'll send you real-time updates on the next metro arrival times.
 
